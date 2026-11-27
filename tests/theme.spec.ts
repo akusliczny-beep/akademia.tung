@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { useTranslations } from "../src/i18n";
 
-const t = useTranslations("en");
+const t = useTranslations("pl");
 
 for (const reducedMotion of ["no-preference", "reduce"] as const) {
   for (const path of ["/", "/posts/"]) {
@@ -11,7 +11,6 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) {
     }) => {
       await page.emulateMedia({ colorScheme: "light", reducedMotion });
       await page.goto(path);
-      // Guarantee enough height to reach the scrolled header state.
       await page.addStyleTag({ content: "body { min-height: 300vh; }" });
       await expect(
         page.getByRole("button", { name: t("nav.dark") }),
@@ -21,7 +20,6 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) {
         "true",
       );
 
-      // Exercise both the transparent header and its themed, scrolled surface.
       for (const scrolled of [false, true]) {
         await page.evaluate((scrolled) => {
           window.scrollTo({ top: scrolled ? 500 : 0, behavior: "instant" });
@@ -77,7 +75,6 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) {
         }
       }
 
-      // Rapid toggles must restore hover transitions and keep the final theme.
       await page
         .getByRole("button", { name: t("nav.dark") })
         .evaluate((node) => {
