@@ -92,16 +92,7 @@ onUnmounted(() => {
             t("nav.search")
           }}</span>
         </button>
-        <a
-          v-if="otherLanguage"
-          class="icon-button language-switch"
-          :href="otherLanguageUrl"
-          :hreflang="otherLanguage"
-          :lang="otherLanguage"
-          :aria-label="`${otherLanguage.toUpperCase()} · ${t('nav.language')}`"
-          :title="t('nav.language')"
-          >{{ otherLanguage.toUpperCase() }}</a
-        >
+      
         <button
           class="icon-button"
           @click="toggle"
