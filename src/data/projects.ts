@@ -9,20 +9,16 @@ export interface Project {
   status: string;
 }
 
-// Example projects. Replace these with your own, or remove the "Projects"
-// entry from navigation in src/site.config.json if you don't need the page.
-export function getProjects(lang: Language): Project[] {
-  const es = lang === "es";
+export function getProjects(_lang: Language): Project[] {
   return [
     {
-      name: "Grimorio",
-      description: es
-        ? "La plantilla de blog con la que está hecho este sitio: Astro, bilingüe y centrada en el contenido."
-        : "The blog template this site is built with: Astro, bilingual, and content-first.",
-      url: "https://github.com/sud0pls/Grimorio-astro",
+      name: "Akademia Tunga",
+      description:
+        "Serwis poświęcony akupunkturze Mistrza Tunga, opracowaniom punktów i notatkom klinicznym.",
+      url: "https://tung.sliczny-tcm.pl",
       icon: "icon-[simple-icons--astro]",
       tech: ["Astro", "Vue", "TypeScript"],
-      status: es ? "Plantilla de ejemplo" : "Example project",
+      status: "Aktywny",
     },
   ];
 }
