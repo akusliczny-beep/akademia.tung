@@ -1,31 +1,23 @@
 {
   "site": {
-    "name": "Grimorio",
-    "logoText": "Grimorio",
+    "name": "Akademia Tunga",
+    "logoText": "Akademia Tunga",
     "favicon": "/favicon.ico",
     "keywords": {
-      "es": [
-        "Grimorio",
-        "plantilla Astro",
-        "blog de seguridad",
-        "seguridad ofensiva",
-        "Hack The Box"
-      ],
-      "en": [
-        "Grimorio",
-        "Astro theme",
-        "security blog",
-        "offensive security",
-        "Hack The Box"
+      "pl": [
+        "akupunktura Tunga",
+        "Master Tung",
+        "TCM",
+        "punkty akupunkturowe",
+        "blog o akupunkturze"
       ]
     }
   },
   "author": {
     "name": {
-      "es": "Grimorio",
-      "en": "Grimorio"
+      "pl": "Michał Śliczny"
     },
-    "handle": "Grimorio",
+    "handle": "Michał Śliczny",
     "github": "https://github.com/sud0pls/Grimorio-astro"
   },
   "navigation": [
@@ -61,7 +53,6 @@
     }
   ],
   "text": {
-    "es": {},
-    "en": {}
+    "pl": {}
   }
 }
