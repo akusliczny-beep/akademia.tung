@@ -1,15 +1,16 @@
 {
   "site": {
-    "name": "Akademia Tunga",
-    "logoText": "Akademia Tunga",
+    "name": "System Tunga",
+    "logoText": "System Tunga",
     "favicon": "/favicon.ico",
     "keywords": {
       "pl": [
-        "akupunktura Tunga",
+        "System Tunga",
+        "akupunktura Mistrza Tunga",
+        "Tung Ching Chang",
         "Master Tung",
         "TCM",
-        "punkty akupunkturowe",
-        "blog o akupunkturze"
+        "punkty akupunkturowe"
       ]
     }
   },
