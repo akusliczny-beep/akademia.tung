@@ -93,6 +93,7 @@ onUnmounted(() => {
           }}</span>
         </button>
         <a
+          v-if="otherLanguage"
           class="icon-button language-switch"
           :href="otherLanguageUrl"
           :hreflang="otherLanguage"
