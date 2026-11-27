@@ -2,11 +2,11 @@
 import { getLanguage, languagePaths, useTranslations } from "../../i18n";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getPersonalInfo } from "../../config";
-import { getAvatar } from "../../lib/avatar";
 export const getStaticPaths = languagePaths;
 const lang = getLanguage(Astro.params.lang);
 const t = useTranslations(lang);
 const personalInfo = getPersonalInfo(lang);
+const logoSrc = "/logo-system-tunga.png";
 ---
 
 <BlogLayout
@@ -18,10 +18,12 @@ const personalInfo = getPersonalInfo(lang);
   <section class="card page-card about-card">
     <div class="about-intro">
       <img
-        {...await getAvatar(84)}
-        width="84"
-        height="84"
-        alt={personalInfo.name}
+        src={logoSrc}
+        width="132"
+        height="132"
+        alt={`${personalInfo.name} — System Tunga`}
+        loading="lazy"
+        decoding="async"
       />
       <div>
         <h2>{t("about.greeting")}</h2>
@@ -41,10 +43,12 @@ const personalInfo = getPersonalInfo(lang);
     border-bottom: 1px solid var(--line);
   }
   .about-intro img {
-    width: 84px;
-    height: 84px;
-    object-fit: cover;
-    border-radius: 50%;
+    width: auto;
+    max-width: 132px;
+    max-height: 132px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
   }
   .about-intro h2 {
     font-size: 26px;
