@@ -5,21 +5,21 @@ import { getTags, type PostSummary } from "../../lib/posts";
 const props = defineProps<{
   posts: PostSummary[];
   lang: Language;
-  avatar: { src: string; srcset: string };
+  avatar?: { src: string; srcset?: string };
 }>();
 const t = useTranslations(props.lang);
 const personalInfo = getPersonalInfo(props.lang);
 const postsPath = localizePath(props.lang, "/posts/");
+const logoSrc = "/logo-system-tunga.png";
 </script>
 <template>
   <section class="card profile-card">
     <a :href="localizePath(lang, '/about/')" class="avatar-link"
       ><img
-        :src="avatar.src"
-        :srcset="avatar.srcset"
-        :alt="personalInfo.name"
-        width="64"
-        height="64"
+        :src="logoSrc"
+        :alt="`${personalInfo.name} — System Tunga`"
+        width="160"
+        height="160"
         loading="lazy"
         decoding="async"
     /></a>
@@ -58,14 +58,17 @@ const postsPath = localizePath(props.lang, "/posts/");
 }
 .avatar-link {
   display: block;
-  width: 88px;
+  width: 100%;
+  max-width: 168px;
   margin: 4px auto 0;
 }
 .avatar-link img {
-  width: 88px;
-  height: 88px;
-  object-fit: cover;
-  border-radius: 50%;
+  display: block;
+  width: 100%;
+  max-width: 168px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
 }
 h2 {
   margin: 14px 0 0;
